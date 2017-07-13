@@ -1,1 +1,49 @@
 /* YeyeYeee código aquí */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background-color: #5D6061;
+	text-align: center;
+}
+
+/* diseño home*/
+
+#home h1{
+	color: #FFC300;
+	font-weight: bold;
+}
+
+#home img{
+	margin-top: 200px;
+	width: 250px;
+}
+
+#home input, 
+#home button{
+height: 50px;
+width: 350px;
+}
+
+#home button{
+	background-color: #FFC300; 
+}
+
+#home i, 
+#home p{
+color: whitesmoke;
+} 
+
+#home h5{
+	color: #FFC300;
+}
+
+#home input{
+	background-color: whitesmoke;
+}
+
+/* diseño dos*/
+
+/* diseño tres*/
+
+/* diseño cuatro*/
