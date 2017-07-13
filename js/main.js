@@ -41,10 +41,18 @@ $(document).ready(function() {
 	});
 });
 
-/* enlace de botón home a pgáina-menú*/
+/* enlace de botón home a página-menú*/
 $(document).ready(function() {
 	$('#home-menu').click(function(){
 		window.location.href="pagina-menu.html";
+	});
+
+});
+
+/* enlace de botón perfil a perfil.html*/
+$(document).ready(function() {
+	$('.perfil-menu').click(function(){
+		window.location.href="perfil.html";
 	});
 
 });
