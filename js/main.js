@@ -1,33 +1,50 @@
-/* Holiii acá va tu código también */
-
+/* validación de correo*/
 $(document).ready(function() {
-	/* validación de correo*/
 	$('#inicio').click(function() {
     // Expresion regular para validar el correo
     var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
 
     // Se utiliza la funcion test() nativa de JavaScript
     if (regex.test($('#email').val().trim())) {
-    	alert('Correo validado');
+    	window.location.href="pagina-menu.html";
     } else {
     	alert('La dirección de correo no es válida');
     }
-  });
+});
 });
 
 
+/* validación de contraseña*/
 $(document).ready(function() {
-	/* validación de contraseña*/
 	$('#inicio').click(function() {
-    // Expresion regular para validar la contraseña
+    // Expresión regular para validar la contraseña
     var regex =/^(?=.*\d).{2,8}$/; 
 
     // Se utiliza la funcion test() nativa de JavaScript
     if (regex.test($('#password').val().trim())) {
-    	alert('Contraseña válida');
+    	window.location.href="pagina-menu.html";
     } else {
     	alert('La contraseña no es válida');
     }
-   });
+});
+
+});
+
+/*menú despegable*/
+$(document).ready(function() {   
+	var sideslider = $('[data-toggle=collapse-side]');
+	var sel = sideslider.attr('data-target');
+	var sel2 = sideslider.attr('data-target-2');
+	sideslider.click(function(event){
+		$(sel).toggleClass('in');
+		$(sel2).toggleClass('out');
+	});
+});
+
+/* enlace de botón home a pgáina-menú*/
+$(document).ready(function() {
+	$('#home-menu').click(function(){
+		window.location.href="pagina-menu.html";
+	});
 
 });
