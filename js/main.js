@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 /* enlace de botón home a página-menú*/
 $(document).ready(function() {
-	$('#home-menu').click(function(){
+	$('.home-menu').click(function(){
 		window.location.href="pagina-menu.html";
 	});
 
@@ -53,6 +53,14 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('.perfil-menu').click(function(){
 		window.location.href="perfil.html";
+	});
+
+});
+
+/* enlace de botón preguntas a preguntas.html*/
+$(document).ready(function() {
+	$('.preguntas-menu').click(function(){
+		window.location.href="preguntas.html";
 	});
 
 });
