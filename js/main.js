@@ -12,6 +12,22 @@ $(document).ready(function() {
     } else {
     	alert('La dirección de correo no es válida');
     }
-   });
+  });
 });
 
+
+$(document).ready(function() {
+	/* validación de contraseña*/
+	$('#inicio').click(function() {
+    // Expresion regular para validar la contraseña
+    var regex =/^(?=.*\d).{2,8}$/; 
+
+    // Se utiliza la funcion test() nativa de JavaScript
+    if (regex.test($('#password').val().trim())) {
+    	alert('Contraseña válida');
+    } else {
+    	alert('La contraseña no es válida');
+    }
+   });
+
+});
