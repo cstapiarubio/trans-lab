@@ -66,6 +66,14 @@ $(document).ready(function() {
 
 });
 
+/* enlace de botón ver saldo a saldo.html*/
+$(document).ready(function() {
+	$('.saldo-menu').click(function(){
+		window.location.href="saldo.html";
+	});
+
+});
+
 /*función que imprime el n° de tarjeta ingresada*/
 $(document).ready( function(){
 	$('#agregarTarjeta').click(function(){
@@ -75,22 +83,28 @@ $(document).ready( function(){
 });
 
 
+/*funcion para obtener el saldo desde la api*/
+$(document).ready(function(){
+    $("#botonSaldo").on("click", function(){
+        var tarjeta = $("#tarjetaSaldo").val();
+    $.ajax({
+            url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + tarjeta,
+            type: 'GET',
+            datatype: 'JSON',
+            
+       })
 
-/*$.ajax({
-	url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=',
-	type: 'GET',
-	dataType: 'json',
-	data: {},
-})
-.done(function() {
-	console.log("success");
-})
-.fail(function() {
-	console.log("error");
-})
-.always(function() {
-	console.log("complete");
-});*/
+       .done(function(response){
+             //div vacio//
+        $("#contenedorSaldo").append("<div id='cuadroSaldo'>"+'<p>SALDO TOTAL</p>'+ response.saldoTarjeta + "</div>")
+            console.log(response.saldoTarjeta);
+        })
+
+       .fail(function(error){
+            console.log("error");
+        })
+    });
+    })
 
 /*funcion para el menu despegable de las preguntas*/
 $(document).ready( function(){
