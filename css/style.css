@@ -440,3 +440,31 @@ h1 a {
 	padding:30px;
 	margin-top: 20px;
 }
+
+/* diseño pagina-tarifa*/
+
+#pagina-tarifa h1{
+	color: whitesmoke;
+	background-color: #404243;
+	font-weight: 700;
+	height: 100px;
+	margin-top: 0;
+}
+
+#pagina-tarifa button{
+	background-color: #FFC300;
+	width: 30%;
+	height: 30px;
+	color: whitesmoke;
+	padding:30px;
+	margin-top: 20px;
+}
+
+#pagina-tarifa input{
+	background-color: whitesmoke;
+	width:60%;
+	height: 30px;
+	color: black;
+	padding:30px;
+	margin-top: 20px;
+}

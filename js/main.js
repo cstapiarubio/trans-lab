@@ -74,6 +74,14 @@ $(document).ready(function() {
 
 });
 
+/* enlace de botón ver tarifa a calcular.html*/
+$(document).ready(function() {
+	$('.tarifa-menu').click(function(){
+		window.location.href="calcular.html";
+	});
+
+});
+
 /*función que imprime el n° de tarjeta ingresada*/
 $(document).ready( function(){
 	$('#agregarTarjeta').click(function(){
