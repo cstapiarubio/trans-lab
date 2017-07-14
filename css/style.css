@@ -250,17 +250,17 @@ background-color: #FFC300;
 }
 
 /* diseño preguntas*/
-* {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+
+#preguntas, 
+#preguntas h1{
+	background-color: #FFC300;
 }
 
-body {
-	background: #2d2c41;
-	font-family: 'Open Sans', Arial, Helvetica, Sans-serif, Verdana, Tahoma;
+#respuestas, 
+#accordeon ul li,
+#accordeon div, 
+#accordeon i{
+background-color: whitesmoke;
 }
 
 ul {
@@ -268,7 +268,7 @@ ul {
 }
 
 a {
-	color: #b63b4d;
+	color: black;
 	text-decoration: none;
 }
 
@@ -302,7 +302,7 @@ h1 a {
 	cursor: pointer;
 	display: block;
 	padding: 15px 15px 15px 42px;
-	color: #4D4D4D;
+	color: black;
 	font-size: 14px;
 	font-weight: 700;
 	border-bottom: 1px solid #CCC;
@@ -321,7 +321,7 @@ h1 a {
 	top: 16px;
 	left: 12px;
 	font-size: 18px;
-	color: #595959;
+	color:#c12c42;
 	-webkit-transition: all 0.4s ease;
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
@@ -364,7 +364,7 @@ h1 a {
  .submenu a {
  	display: block;
  	text-decoration: none;
- 	color: #d9d9d9;
+ 	color: black;
  	padding: 12px;
  	padding-left: 42px;
  	-webkit-transition: all 0.25s ease;
