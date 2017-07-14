@@ -64,3 +64,12 @@ $(document).ready(function() {
 	});
 
 });
+
+/*función que imprime el n° de trajeta ingresada*/
+$(document).ready( function(){
+	$('#agregarTarjeta').click(function(){
+		var tarjeta=$('#numeroTarjeta').val();
+		$('#contenedorTarjeta').append('<p>'+tarjeta+'</p>' );
+	});
+});
+
