@@ -1,4 +1,3 @@
-/* YeyeYeee código aquí */
 *{
 	margin: 0;
 	padding: 0;
@@ -44,9 +43,24 @@ color: whitesmoke;
 
 /* diseño pagina-menu*/
 
+#menu h1{
+	background-color: #404243;
+	font-weight: 700;
+	height: 100px;
+	margin-top: 0;
+}
+
+#menu button{
+	background-color: #FFC300;
+	width: 100%;
+	height: 30px;
+	color: whitesmoke;
+	padding:30px;
+	margin-top: 20px;
+}
+
 .nav-side-menu {
   overflow: auto;
-  font-family: verdana;
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
@@ -183,7 +197,12 @@ body {
 
 #menu-perfil h1{
 	color: whitesmoke;
+	background-color: #404243;
+	font-weight: 700;
+	height: 100px;
+	margin-top: 0;
 }
+
 #perfil input{
 	background-color: whitesmoke;
 	width: 250px;
@@ -250,6 +269,13 @@ background-color: #FFC300;
 }
 
 /* diseño preguntas*/
+#menu-preguntas h1{
+	color: whitesmoke;
+	background-color: #404243;
+	font-weight: 700;
+	height: 100px;
+	margin-top: 0;
+}
 
 #preguntas, 
 #preguntas h1{
