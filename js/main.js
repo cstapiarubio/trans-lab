@@ -11,6 +11,7 @@ $(document).ready(function() {
     	alert('La dirección de correo no es válida');
     }
 });
+
 });
 
 
@@ -65,11 +66,62 @@ $(document).ready(function() {
 
 });
 
-/*función que imprime el n° de trajeta ingresada*/
+/*función que imprime el n° de tarjeta ingresada*/
 $(document).ready( function(){
 	$('#agregarTarjeta').click(function(){
 		var tarjeta=$('#numeroTarjeta').val();
 		$('#contenedorTarjeta').append('<p>'+tarjeta+'</p>' );
 	});
 });
+
+
+
+/*$.ajax({
+	url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=',
+	type: 'GET',
+	dataType: 'json',
+	data: {},
+})
+.done(function() {
+	console.log("success");
+})
+.fail(function() {
+	console.log("error");
+})
+.always(function() {
+	console.log("complete");
+});*/
+
+/*funcion para el menu despegable de las preguntas*/
+$(document).ready( function(){
+	$(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables privadas
+		var links = this.el.find('.link');
+		// Evento
+		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if (!e.data.multiple) {
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		};
+	}	
+
+	var accordion = new Accordion($('#accordeon'), false);
+});
+	});
+
+
+
 
