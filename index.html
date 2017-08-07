@@ -3,9 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Translab</title>
+	<meta name="viewport" content="width=500, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://use.fontawesome.com/2c0c95ddaa.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Compiled and minified CSS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -14,49 +17,42 @@
 		<img src="docs/imagen.png">
 		<h1>TRANS-LAB</h1>
 		<div class="container">
-
 			<div class="row">
-				<div class="col-md-12 col-xs-12">
-					<i class="fa fa-user" aria-hidden="true"></i> 
-					<input id="email" type="email" name="" placeholder="Correo electrónico">
+				<div class="col m12 col s12">
+					<i class="material-icons">person_outline</i>
+					<input id="email" type="email" placeholder="Correo electrónico" class="validate">
 				</div>	
 			</div>
 
 			<div class="row">
-				<div class="col-md-12 col-xs-12">
-					<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-					<input id="password" type="password" name="" placeholder="Contraseña">
+				<div class="col m12 col s12">
+					<i class="material-icons prefix">lock_outline</i>
+					<input id="password" type="number" placeholder="Contraseña" class="validate">
 				</div>	
 			</div>
 
 			<div class="row">
-				<div class="col-md-12 col-xs-12">
-					<button id="inicio">INICIAR SESIÓN</button>
+				<div class="col m12 col s12">
+					<a id="inicio" class="waves-effect waves-light btn">INICIAR SESIÓN</a>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-12 col-xs-12">
+				<div class="col m12 col s12">
 					<p>¿Olvidaste tu contraseña?</p>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-12 col-xs-12">
+				<div class="col m12 col s12">
 					<p>¿NO TIENES CUENTA?</p>
 					<h5>REGÍSTRATE</h5>
 				</div>
 			</div>
 		</div>
-
-		
-
 	</section>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

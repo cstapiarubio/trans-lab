@@ -3,43 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Translab</title>
+	<meta name="viewport" content="width=500, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://use.fontawesome.com/2c0c95ddaa.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Compiled and minified CSS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<section id="menu-perfil">
 		<h1>TRANS-LAB</h1>
-		<div class="nav-side-menu">
-			<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-			<ul>
-				<li data-toggle="collapse" data-target="#service" class="collapsed">
-					<i class="fa fa-bars" aria-hidden="true"></i> <span class="arrow"></span></a>
-				</li>  
-			</ul>
-			<ul class="sub-menu collapse" id="service">
-				<li class="saldo-menu"><i class="fa fa-usd" aria-hidden="true"></i>
-					Ver saldo</li>
-					<li class="tarifa-menu"><i class="fa fa-calculator" aria-hidden="true"></i> Calcular tarifa</li>
-					<li class="preguntas-menu"><i class="fa fa-question-circle-o" aria-hidden="true"></i>   Preguntas frecuentes</li>
-					<li class="perfil-menu"><i class="fa fa-user fa-lg"></i> Perfil</li>
-					<li class="home-menu"><i class="fa fa-home" aria-hidden="true"></i> Home</li>
-				</ul>	
-			</div>
-		</section>
 
+			<ul id="slide-out" class="side-nav">
+				<li class="saldo-menu"><a href="#!"><i class="material-icons">cloud</i> Ver saldo</a></li>
+				<li class="tarifa-menu"><a href="#!"><i class="material-icons">cloud</i> Calcular tarifa</a></li>
+				<li class="preguntas-menu"><a class="subheader"><i class="material-icons">cloud</i> Preguntas frecuentes</a></li>
+				<li class="perfil-menu"><a class="waves-effect" href="#!"><i class="material-icons">cloud</i> Perfil</a></li>
+				<li class="home-menu"><a href="#!"><i class="material-icons">cloud</i> Home</a></li>
+			</ul>
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+	
 		<!--perfil-->
 
 		<div id="perfil" class="container">
 			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="col m12 col s12">
 					<div class="profile-userpic">
-						<img src="img/camilo.jpg" alt=
+						<img class="circle" src="img/camilo.jpg" alt=
 					</div>
 					<div class="profile-usertitle">
-						<div class="profile-usertitle-mail">
-							<input type="email" name="" placeholder="nombre@gmail.com">
+						<div id="contenedorEmail" class="profile-usertitle-mail">
 						</div>
 						<div class="profile-usertitle-target">
 							<input id="numeroTarjeta" type="number" name="" placeholder="Número de tarjeta">
@@ -50,17 +44,13 @@
 						<button id="agregarTarjeta" type="button" class="btn btn-success btn-m">AGREGAR TARJETA</button>
 					</div>
 
-					<div id="contenedorTarjeta">
-
-					</div>
+					<div id="contenedorTarjeta"></div>
 				</div>
 			</div>
 		</div>
-		<script
-		src="https://code.jquery.com/jquery-3.2.1.js"
-		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-		crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
-	</html>
+	</section>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

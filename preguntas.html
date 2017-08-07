@@ -3,37 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Translab</title>
-
+	<meta name="viewport" content="width=500, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://use.fontawesome.com/2c0c95ddaa.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Compiled and minified CSS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div id="menu-preguntas">
+	<div id="preguntas-menu">
 		<h1>TRANS-LAB</h1>
 
-		<div class="nav-side-menu">
-			<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-			<div class="menu-list">
-
-				<ul id="menu-content" class="menu-content collapse out">
-
-					<li data-toggle="collapse" data-target="#service" class="collapsed">
-						<i class="fa fa-bars" aria-hidden="true"></i> <span class="arrow"></span></a>
-					</li>  
-					<ul class="sub-menu collapse" id="service">
-						<li class="saldo-menu"><i class="fa fa-usd" aria-hidden="true"></i>
-							Ver saldo</li>
-							<li class="tarifa-menu"><i class="fa fa-calculator" aria-hidden="true"></i> Calcular tarifa</li>
-							<li><i class="fa fa-question-circle-o" aria-hidden="true"></i>   Preguntas frecuentes</li>
-							<li class="perfil-menu"><i class="fa fa-user fa-lg"></i> Perfil</li>
-							<li class="home-menu"><i class="fa fa-home" aria-hidden="true"></i> Home</li>
-						</ul>
-					</ul>
-				</div>
-			</div>
+				<ul id="slide-out" class="side-nav">
+					<li class="saldo-menu"><a href="#!"><i class="material-icons">cloud</i> Ver saldo</a></li>
+					<li class="tarifa-menu"><a href="#!"><i class="material-icons">cloud</i> Calcular tarifa</a></li>
+					<li class="preguntas-menu"><a class="subheader"><i class="material-icons">cloud</i> Preguntas frecuentes</a></li>
+					<li class="perfil-menu"><a class="waves-effect" href="#!"><i class="material-icons">cloud</i> Perfil</a></li>
+					<li class="home-menu"><a href="#!"><i class="material-icons">cloud</i> Home</a></li>
+				</ul>
+				<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>	
 		</section>
 
 		<div id="preguntas">
@@ -42,58 +31,47 @@
 		</div>
 		<div id="respuestas">
 
-		<ul id="accordeon" class="accordion">
-		<li>
-			<div class="link"><a>¿Qué cuidados requiere la tarjeta para mantenerla en buenas condiciones?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-			<ul class="submenu">
-			<li><a>Los cuidados de tu tarjeta son simples. Sólo debes evitar exponerla al calor, doblarla o quebrarla. Te recomendamos tenerla en un tarjetero plástico para aumentar su vida útil.</a></li>
-				
-			</ul>
-		</li>
+			<ul id="accordeon" class="accordion">
+				<li>
+					<div class="link"><a>¿Qué cuidados requiere la tarjeta para mantenerla en buenas condiciones?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+					<ul class="submenu">
+						<li><a>Los cuidados de tu tarjeta son simples. Sólo debes evitar exponerla al calor, doblarla o quebrarla. Te recomendamos tenerla en un tarjetero plástico para aumentar su vida útil.</a></li>
+					</ul>
+				</li>
 
 
-		<li >
-			<div class="link"><a>¿Dónde puedo cambiar mi tarjeta bip! portador en caso de falla?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-			<ul class="submenu">
-			<li><a>Si tu tarjeta no funciona y tiene daños no atribuibles al usuario, llévala a una Oficina de Servicio al Cliente donde será cambiada por una nueva, sólo si se comprueba la falla. Si la tarjeta dañada tiene saldo, será traspasado en cinco días hábiles.</a></li>
-				
-			</ul>
-		</li>
+				<li >
+					<div class="link"><a>¿Dónde puedo cambiar mi tarjeta bip! portador en caso de falla?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+					<ul class="submenu">
+						<li><a>Si tu tarjeta no funciona y tiene daños no atribuibles al usuario, llévala a una Oficina de Servicio al Cliente donde será cambiada por una nueva, sólo si se comprueba la falla. Si la tarjeta dañada tiene saldo, será traspasado en cinco días hábiles.</a></li>
+					</ul>
+				</li>
 
-		<li>
-			<div class="link"><a>Si me equivoco de bus y paso la tarjeta, ¿me devuelven la carga?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-			<ul class="submenu">
-			<li><a>No, el pasaje se cobra automáticamente sin devolución.</a></li>
-				
-			</ul>
-		</li>
+				<li>
+					<div class="link"><a>Si me equivoco de bus y paso la tarjeta, ¿me devuelven la carga?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+					<ul class="submenu">
+						<li><a>No, el pasaje se cobra automáticamente sin devolución.</a></li>
+					</ul>
+				</li>
 
-		<li class="open">
-			<div class="link"><a>¿Cómo opera el viaje de emergencia?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-			<ul class="submenu">
-			<li><a>Si tienes saldo insuficiente en tu tarjeta puedes utilizar el Viaje de Emergencia. Con él podrás realizar un único viaje integrado el cual tendrá que ser repuesto en la próxima carga. El horario del viaje de emergencia es:
-El Saldo de Emergencia está disponible las 24 horas del día, de lunes a domingo.</a></li>
-				
-			</ul>
-		</li>
+				<li class="open">
+					<div class="link"><a>¿Cómo opera el viaje de emergencia?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+					<ul class="submenu">
+						<li><a>Si tienes saldo insuficiente en tu tarjeta puedes utilizar el Viaje de Emergencia. Con él podrás realizar un único viaje integrado el cual tendrá que ser repuesto en la próxima carga. El horario del viaje de emergencia es:
+							El Saldo de Emergencia está disponible las 24 horas del día, de lunes a domingo.</a></li>
+						</ul>
+					</li>
 
-		<li>
-			<div class="link"><a>¿Qué es una tarjeta bip! personalizada?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-			<ul class="submenu">
-			<li><a>Es un tipo de bip! que tiene foto, nombre y rut del usuario. Tiene un valor de $2.800 y puede ser adquirida en cualquiera de las cinco oficinas de servicio al cliente ubicadas en Estado 383, Metro Plaza Puente Alto, Sub centro Metro escuela Militar, Metro la Cisterna, Metro Vespucio Norte.</a></li>
-				
-			</ul>
-		</li>
-
-			
-		</ul>
+					<li>
+						<div class="link"><a>¿Qué es una tarjeta bip! personalizada?</a><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+						<ul class="submenu">
+							<li><a>Es un tipo de bip! que tiene foto, nombre y rut del usuario. Tiene un valor de $2.800 y puede ser adquirida en cualquiera de las cinco oficinas de servicio al cliente ubicadas en Estado 383, Metro Plaza Puente Alto, Sub centro Metro escuela Militar, Metro la Cisterna, Metro Vespucio Norte.</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
-
-			<script
-			src="https://code.jquery.com/jquery-3.2.1.js"
-			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-			crossorigin="anonymous"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
 			<script type="text/javascript" src="js/main.js"></script>
 		</body>
 		</html>

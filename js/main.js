@@ -1,122 +1,149 @@
-/* validación de correo*/
 $(document).ready(function() {
+	//llamando fx de localstorage 
+	loadSettings();
+
+	//Select calcular tarifa
+	$('select').material_select();
+
+	// Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  $('.collapsible').collapsible();
+
+
+	/* validación de correo y contraseña*/
 	$('#inicio').click(function() {
     // Expresion regular para validar el correo
     var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
 
     // Se utiliza la funcion test() nativa de JavaScript
-    if (regex.test($('#email').val().trim())) {
+    if (!regex.test($('#email').val().trim())){
+    	alert('Correo inválido');
+    }
+
+    var regex2 =/^(?=.*\d).{2,8}$/;
+    if(!regex2.test($('#password').val().trim())){
+    	alert('Contraseña inválida');
+    }
+    else{
     	window.location.href="pagina-menu.html";
-    } else {
-    	alert('La dirección de correo no es válida');
+    	//llamado a fx localstorage
+    	saveSettings();
     }
 });
 
-});
-
-
-/* validación de contraseña*/
-$(document).ready(function() {
-	$('#inicio').click(function() {
-    // Expresión regular para validar la contraseña
-    var regex =/^(?=.*\d).{2,8}$/; 
-
-    // Se utiliza la funcion test() nativa de JavaScript
-    if (regex.test($('#password').val().trim())) {
-    	window.location.href="pagina-menu.html";
-    } else {
-    	alert('La contraseña no es válida');
-    }
-});
-
-});
-
-/*menú despegable*/
-$(document).ready(function() {   
-	var sideslider = $('[data-toggle=collapse-side]');
-	var sel = sideslider.attr('data-target');
-	var sel2 = sideslider.attr('data-target-2');
-	sideslider.click(function(event){
-		$(sel).toggleClass('in');
-		$(sel2).toggleClass('out');
-	});
-});
-
-/* enlace de botón home a página-menú*/
-$(document).ready(function() {
+	/* enlace de botón home a página-menú*/
 	$('.home-menu').click(function(){
 		window.location.href="pagina-menu.html";
 	});
 
-});
-
-/* enlace de botón perfil a perfil.html*/
-$(document).ready(function() {
+	/* enlace de botón perfil a perfil.html*/
 	$('.perfil-menu').click(function(){
 		window.location.href="perfil.html";
 	});
 
-});
-
-/* enlace de botón preguntas a preguntas.html*/
-$(document).ready(function() {
+	/* enlace de botón preguntas a preguntas.html*/
 	$('.preguntas-menu').click(function(){
 		window.location.href="preguntas.html";
 	});
 
-});
+	/* enlace de botón ver saldo a saldo.html*/
 
-/* enlace de botón ver saldo a saldo.html*/
-$(document).ready(function() {
 	$('.saldo-menu').click(function(){
 		window.location.href="saldo.html";
 	});
 
-});
-
-/* enlace de botón ver tarifa a calcular.html*/
-$(document).ready(function() {
+	/* enlace de botón ver tarifa a calcular.html*/
 	$('.tarifa-menu').click(function(){
 		window.location.href="calcular.html";
 	});
 
-});
+	/*función que imprime el n° de tarjeta ingresada*/
 
-/*función que imprime el n° de tarjeta ingresada*/
-$(document).ready( function(){
+	function loadSettings() {
+		$('#contenedorEmail').append('<span id="emailPerfil">' + localStorage.email + '</span>');
+	}
 	$('#agregarTarjeta').click(function(){
 		var tarjeta=$('#numeroTarjeta').val();
-		$('#contenedorTarjeta').append('<p>'+tarjeta+'</p>' );
+		$('#contenedorTarjeta').append('<p>'+tarjeta+'</p>');
 	});
-});
 
+	/*funcion para obtener el saldo desde la api*/
+	$("#botonSaldo").on("click", function(){
+		var tarjeta = $("#tarjetaSaldo").val();
+		$.ajax({
+			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + tarjeta,
+			type: 'GET',
+			datatype: 'JSON',
 
-/*funcion para obtener el saldo desde la api*/
-$(document).ready(function(){
-    $("#botonSaldo").on("click", function(){
-        var tarjeta = $("#tarjetaSaldo").val();
-    $.ajax({
-            url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + tarjeta,
-            type: 'GET',
-            datatype: 'JSON',
-            
-       })
+		})
 
-       .done(function(response){
+		.done(function(response){
              //div vacio//
-        $("#contenedorSaldo").append("<div id='cuadroSaldo'>"+'<p>SALDO TOTAL</p>'+ response.saldoTarjeta + "</div>")
-            console.log(response.saldoTarjeta);
-        })
+             $("#contenedorSaldo").append("<div id='cuadroSaldo'>"+'<p>SALDO TOTAL</p>'+ response.saldoTarjeta + "</div>")
+             console.log(response.saldoTarjeta);
+         })
 
-       .fail(function(error){
-            console.log("error");
-        })
-    });
-    })
+		.fail(function(error){
+			console.log("error");
+		})
+	});
+
+	/*fx cálculo tarifa*/
+	var calculo=0;
+	$("#calculoTarifa").on("click", function(){
+		var tarjeta=$('#numeroTarjeta').val();
+		var horario =$('#cbx_horario option:selected').val();
+		console.log(horario);
+
+		$.ajax({
+			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + tarjeta,
+			type: 'GET',
+			datatype: 'JSON',
+
+		})
+
+		.done(function(response){
+             //div vacio//
+             var saldoSinpeso =response.saldoTarjeta.slice(1).replace('.', '');
+             if(horario =="1"){
+             	calculo=saldoSinpeso-740;
+             	$("#contenedorCalculo").append("<div id='cuadroCalculo'>"+'<p>SALDO TOTAL</p>'+ calculo + "</div>");
+             }
+             else if(horario =="2"){
+             	calculo=saldoSinpeso-660;
+             	$("#contenedorCalculo").append("<div id='cuadroCalculo'>"+'<p>SALDO TOTAL</p>'+ calculo + "</div>");
+
+             }
+             else if(horario =="3")
+             	{calculo=saldoSinpeso-610;
+             		$("#contenedorCalculo").append("<div id='cuadroCalculo'>"+'<p>SALDO TOTAL</p>'+ calculo + "</div>");
+             	}
+             	else{"Seleccione una opción"}
+
+             });
+
+		$("#contenedorCalculo").append("<div id='cuadroSaldo2'>"+'<p>SALDO TOTAL</p>'+ response.saldoTarjeta + "</div>")
+		console.log(response.saldoTarjeta);
+	})
+
+	.fail(function(error){
+		console.log("error");
+	})
+
+	/*uso localstorage mail*/
+	function loadSettings() {
+		$('#contenedorEmail').append('<span id="emailPerfil">' + localStorage.email + '</span>');
+	}
+
+	function saveSettings() {
+		localStorage.email = $('#email').val();
+	}
+
 
 /*funcion para el menu despegable de las preguntas*/
-$(document).ready( function(){
-	$(function() {
+
+$(function() {
 	var Accordion = function(el, multiple) {
 		this.el = el || {};
 		this.multiple = multiple || false;
@@ -129,8 +156,8 @@ $(document).ready( function(){
 
 	Accordion.prototype.dropdown = function(e) {
 		var $el = e.data.el;
-			$this = $(this),
-			$next = $this.next();
+		$this = $(this),
+		$next = $this.next();
 
 		$next.slideToggle();
 		$this.parent().toggleClass('open');
@@ -141,8 +168,10 @@ $(document).ready( function(){
 	}	
 
 	var accordion = new Accordion($('#accordeon'), false);
-});
-	});
+ });
+
+})/*término jquery*/
+
 
 
 
