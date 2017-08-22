@@ -1,7 +1,4 @@
 $(document).ready(function() {
-	//llamando fx de localstorage 
-	loadSettings();
-
 	//Select calcular tarifa
 	$('select').material_select();
 
@@ -28,7 +25,8 @@ $(document).ready(function() {
     else{
     	window.location.href="pagina-menu.html";
     	//llamado a fx localstorage
-    	saveSettings();
+    	//en contenedor guardaré el mail que ingresen
+    	localStorage.setItem('contenedorMail', $('#email').val());
     }
 });
 
@@ -59,10 +57,9 @@ $(document).ready(function() {
 	});
 
 	/*función que imprime el n° de tarjeta ingresada*/
+	var correoingresado=localStorage.getItem("contenedorMail");
+		$('#contenedorEmail').append('<span id="emailPerfil">' + correoingresado + '</span>');
 
-	function loadSettings() {
-		$('#contenedorEmail').append('<span id="emailPerfil">' + localStorage.email + '</span>');
-	}
 	$('#agregarTarjeta').click(function(){
 		var tarjeta=$('#numeroTarjeta').val();
 		$('#contenedorTarjeta').append('<p>'+tarjeta+'</p>');
@@ -92,7 +89,7 @@ $(document).ready(function() {
 	/*fx cálculo tarifa*/
 	var calculo=0;
 	$("#calculoTarifa").on("click", function(){
-		var tarjeta=$('#numeroTarjeta').val();
+		var tarjeta=$('#tarjetaSaldo').val();
 		var horario =$('#cbx_horario option:selected').val();
 		console.log(horario);
 
@@ -106,6 +103,7 @@ $(document).ready(function() {
 		.done(function(response){
              //div vacio//
              var saldoSinpeso =response.saldoTarjeta.slice(1).replace('.', '');
+             console.log(saldoSinpeso);
              if(horario =="1"){
              	calculo=saldoSinpeso-740;
              	$("#contenedorCalculo").append("<div id='cuadroCalculo'>"+'<p>SALDO TOTAL</p>'+ calculo + "</div>");
@@ -130,15 +128,6 @@ $(document).ready(function() {
 	.fail(function(error){
 		console.log("error");
 	})
-
-	/*uso localstorage mail*/
-	function loadSettings() {
-		$('#contenedorEmail').append('<span id="emailPerfil">' + localStorage.email + '</span>');
-	}
-
-	function saveSettings() {
-		localStorage.email = $('#email').val();
-	}
 
 
 /*funcion para el menu despegable de las preguntas*/
