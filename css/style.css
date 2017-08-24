@@ -347,14 +347,16 @@ h1 a {
 	margin-top: 20px;
 }
 
-#cuadroSaldo p{
+.cuadroSaldo p{
 	background-color: #FFC300;
 	width: 1000px;
-	height: 30px;
+	height: 40px;
 	color: black;
 	margin-top: 20px;
 	position: relative;
 	text-align: center;
 }
+
+
 
 
